@@ -1,0 +1,45 @@
+[package]
+name = "fem_sim"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = { version = "0.14.0", features = ["webgl2"] }
+bevy_egui = { version = "0.30.0", default-features = false, features = [
+    "open_url",
+    "default_fonts",
+    "render",
+] }
+bevy_panorbit_camera = "0.20.0"
+faer = "0.22"
+plotters = "0.3.7"
+rand = "0.8.5"
+
+# From https://bevyengine.org/learn/quick-start/getting-started/setup/
+
+# Enable a small amount of optimization in the dev profile.
+[profile.dev]
+opt-level = 1
+
+# Enable a large amount of optimization in the dev profile for dependencies.
+[profile.dev.package."*"]
+opt-level = 3
+
+# Enable more optimization in the release profile at the cost of compile time.
+[profile.release]
+# Compile the entire crate as one unit.
+# Slows compile times, marginal improvements.
+codegen-units = 1
+# Do a second optimization pass over the entire program, including dependencies.
+# Slows compile times, marginal improvements.
+lto = "thin"
+
+# Optimize for size in the wasm-release profile to reduce load times and bandwidth usage on web.
+[profile.wasm-release]
+# Default to release profile values.
+inherits = "release"
+# Optimize with size in mind (also try "z", sometimes it is better).
+# Slightly slows compile times, great improvements to file size and runtime performance.
+opt-level = "s"
+# Strip all debugging information from the binary to slightly reduce file size.
+strip = "debuginfo"

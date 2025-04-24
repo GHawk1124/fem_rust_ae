@@ -14,13 +14,13 @@ Try it online: [https://GHawk1124.github.io/fem_rust_ae](https://GHawk1124.githu
 ### Linux
 - Rust toolchain (install from [rustup.rs](https://rustup.rs))
 - Build essentials: `sudo apt install build-essential`
-- Required libraries: `sudo apt install \
-    libx11-dev \
-    libxcb-render0-dev \
-    libxcb-shape0-dev \
-    libxcb-xfixes0-dev \
-    libasound2-dev \
-    libudev-dev \
+- Required libraries: `sudo apt install \\
+    libx11-dev \ \\
+    libxcb-render0-dev \ \\
+    libxcb-shape0-dev \ \\
+    libxcb-xfixes0-dev \ \\
+    libasound2-dev \ \\
+    libudev-dev \ \\
     build-essential`
 
 ## Building

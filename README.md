@@ -1,4 +1,4 @@
-# Author: GHawk1124 (Garrett Comes) 4/23/2024
+# Author: GHawk1124 (Garrett Comes) 4/23/2025
 # For AE 4132: Finite Element Analysis Final Project
 
 # FEM Simulation
